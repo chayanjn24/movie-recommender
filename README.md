@@ -11,7 +11,7 @@ Which recommender should a catalogue team ship, judged on **ranking quality** (a
 
 ## Headline results (ml-25m, 25M ratings)
 - **Implicit ALS beats "recommend the most popular movies" by 94%** on NDCG@10 (0.0742 vs 0.0382). On the small dataset the lead was 59%, so it grows with more data.
-- **Its validation score holds up on test** (0.0721 → 0.0742). On the small dataset, test fell well below validation (0.0695 → 0.0527): tuning on 610 users overfit validation.
+- **Validation now predicts test.** At 25M, implicit ALS scores 0.0721 on validation and 0.0742 on test. On the small dataset every model scored about a fifth lower on test than on validation (implicit ALS 0.0695 → 0.0527, popularity 0.0420 → 0.0332), so 610 users made a noisy tuning guide.
 - **The best rating predictor is the worst recommender.** Explicit ALS has the lowest error (RMSE 0.887) but NDCG@10 of 0.000: its top 10 are obscure movies from the long tail (average popularity percentile 0.09).
 - **Training scales sub-linearly.** 100x more data took 8.3x longer to fit (41 s → 339 s on Free Edition serverless).
 - Implicit ALS recommends 3.8% of the catalogue across users, against 0.32% for popularity.
