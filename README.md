@@ -2,6 +2,8 @@
 
 How well does collaborative filtering (Spark ALS) rank the movies a user actually watches next, compared with simple baselines? I built it on 100K MovieLens ratings, then scaled the same notebooks to 25 million ratings on Databricks.
 
+**[Case study](https://chayangulgulia.vercel.app/work/movie-recs)** · **[Notebooks with results](https://chayanjn24.github.io/movie-recommender/)**
+
 ![NDCG@10 by model, small vs 25M](docs/images/ndcg_small_vs_25m.png)
 
 ## Business question
